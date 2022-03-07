@@ -7,9 +7,9 @@
 	"require": {
 		"php": "^8.0",
 		"codeigniter4/framework": "^4",
-      "ext-curl": "*",
+        "ext-curl": "*",
 		"ext-dom": "*"
-	},
+    },
 	"require-dev": {
 		"fakerphp/faker": "^1.9",
 		"mikey179/vfsstream": "^1.6",

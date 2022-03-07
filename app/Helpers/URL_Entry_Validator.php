@@ -2,10 +2,9 @@
 
 namespace App\Helpers;
 
-/**
- * @property string regex
- */
-class URL_Validator
+use App\Controllers\BaseController;
+
+class URL_Entry_Validator extends BaseController
 {
     public function __construct()
     {

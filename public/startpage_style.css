@@ -1,66 +1,59 @@
 
 :root {
-    --ruby: hsla(0, 43%, 33%, 0.87);
-    --ruby2: rgba(100, 50, 50, 0.897);
-    --ruby3: hsla(0, 41%, 26%, 0.808);
-    --darkgrey: hsla(0, 0%, 0%, 0.87);
     --lightey: hsl(0, 0%, 100%);
-    --mousy: hsla(0, 8%, 20%, 0.685);
-    --grassy:rgba(79, 119, 47, 0.87);
-    --violetta:rgba(78, 47, 119, 0.87);
-    --saphire:rgba(47, 114, 119, 0.87);
-    --test:rgba(8, 79, 138, 0.767);
-    --cl1: rgba(35, 16, 16, 0.49)
+    --bg: rgba(35, 16, 16, 0.49);
+    --c-border-url-form-style: #DDDDDD;
+    --c-label-url-form-style: #B9B9B9;
 }
 
 body {
-    /* background-image: url(); */
+    /*
     background-position: 1% 2.1%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 300px 300px;
-    background-color: var(--cl1) !important;
+    background-image: url(""); */
+    background-color: var(--bg) !important;
 }
 
-.url-form-style{
+.url-form-style {
     max-width: 650px;
     margin: 50px auto;
-    background: #fff;
-    border-radius: 2px;
+    background: var(--lightey);
+    border-radius: 0px;
     padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.url-form-style ul{
+.url-form-style ul {
     list-style:none;
     padding:0;
     margin:0;
 }
-.url-form-style li{
+.url-form-style li {
     display: block;
     padding: 9px;
-    border:1px solid #DDDDDD;
+    border:1px solid var(--c-border-url-form-style);
     margin-bottom: 30px;
-    border-radius: 3px;
+    border-radius: 0px;
 }
-.url-form-style li:last-child{
+.url-form-style li:last-child {
     border:none;
     margin-bottom: 0px;
     text-align: center;
 }
-.url-form-style li > label{
+.url-form-style li > label {
     display: block;
     float: left;
     margin-top: -19px;
-    background: #FFFFFF;
+    background: var(--lightey);
     height: 14px;
     padding: 2px 5px 2px 5px;
-    color: #B9B9B9;
+    color: var(--c-label-url-form-style);
     font-size: 14px;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
-.url-form-style input[type="text"]
-{
+.url-form-style input[type="text"] {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -74,12 +67,8 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-.url-form-style input[type="text"]:focus,
-.url-form-style:focus
-{
-}
 
-.url-form-style li > span{
+.url-form-style li > span {
     background: #F3F3F3;
     display: block;
     padding: 3px;
@@ -90,67 +79,44 @@ body {
     font-size: 11px;
 }
 
-.url-form-style input[type="submit"]
-{
+.url-form-style input[type="submit"] {
     background: #2471FF;
     border: none;
     padding: 10px 20px 10px 20px;
     border-bottom: 3px solid #5994FF;
-    border-radius: 3px;
+    border-radius: 0px;
     color: #D2E2FF;
+    cursor: pointer;
 }
 
 .url-form-style input[type="submit"]:hover {
     background: #6B9FFF;
-    color: #fff;
-}
-/*
-input {
-    font-family: arial, sans-serif;
-    padding:5px;
-    margin-bottom:5px;
+    color: var(--lightey);
 }
 
-
-.URL-input[type=text] {
-    transition: width 0.4s ease-in-out;
-}
-
-.URL-input[type=text]:focus {
-    width: 30%;
-  }
-  */
 #result_frame {
-    width: 500px;
+    width: 100%;
     height: 500px;
     max-width: 650px;
     margin: 0 auto;
     display: block;
-    background: #fff;
-    border-radius: 3px;
+    background: var(--lightey);
     padding: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#second_result_frame {
-    width:500px;
-    height:500px;
-    max-width: 650px;
-    margin: 0 auto;
+.download-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    width: 278px;
     display: block;
-    background: #fff;
-    border-radius: 3px;
-    padding: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--darkgrey);
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--lightey);
-    text-align: center;
+.download-button:hover {
+    opacity: 1;
 }
