@@ -9,7 +9,7 @@ class SettingsController extends BaseController
     public function __construct()
     {
         $this->session = \Config\Services::session();
-        $this->ex      = new URL_Exclude_Lists();
+        $this->ex = new URL_Exclude_Lists();
     }
 
     public function set_settings()
@@ -18,14 +18,12 @@ class SettingsController extends BaseController
         $this->session->set('timeLimit', $timeLimit >= 1 ? $timeLimit : 1);
 
         $toExclude = array();
-        foreach($this->ex->excludeLists as $key => $list)
-        {
-            if($this->request->getPost($key) != null)
-            {
-                $toExclude = array_merge($toExclude,$list);
+        foreach ($this->ex->excludeLists as $key => $list) {
+            if ($this->request->getPost($key) != null) {
+                $toExclude = array_merge($toExclude, $list);
             }
         }
-        $this->session->set('excludeList',$toExclude);
+        $this->session->set('excludeList', $toExclude);
         return redirect()->to(base_url());
     }
 }

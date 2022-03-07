@@ -9,8 +9,8 @@ class Curl_And_XPath_Query
 
     public function __construct($url)
     {
-        $html             = $this->curl($url);
-        $this->dom        = new \DOMDocument();
+        $html = $this->curl($url);
+        $this->dom = new \DOMDocument();
         @$this->dom->loadHTML($html);
         $this->xpathQuery = new \DOMXPath($this->dom);
     }
@@ -23,8 +23,7 @@ class Curl_And_XPath_Query
         curl_setopt($ch, CURLOPT_AUTOREFERER, false);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         $result = curl_exec($ch);
-        if(!$result)
-        {
+        if (!$result) {
             echo "curl error number: " . curl_errno($ch);
             echo "<br />curl error: " . curl_error($ch) . " on following URL - " . $url;
             var_dump(curl_getinfo($ch));
