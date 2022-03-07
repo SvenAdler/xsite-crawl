@@ -3,16 +3,18 @@
 namespace App\Controllers;
 
 use App\Helpers\URL_Exclude_Lists;
+use CodeIgniter\HTTP\RedirectResponse;
+use Config\Services;
 
 class SettingsController extends BaseController
 {
     public function __construct()
     {
-        $this->session = \Config\Services::session();
+        $this->session = Services::session();
         $this->ex = new URL_Exclude_Lists();
     }
 
-    public function set_settings()
+    public function set_settings(): RedirectResponse
     {
         $timeLimit = (int)$this->request->getPost('timeLimit');
         $this->session->set('timeLimit', $timeLimit >= 1 ? $timeLimit : 1);

@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 
 class URL_Entry_Validator extends BaseController
 {
+    private string $regex;
+
     public function __construct()
     {
         $regex  = "((https?|ftp)\:\/\/)?";

@@ -1,5 +1,8 @@
 <?php
-$this->session = \Config\Services::session();
+
+use Config\Services;
+
+$this->session = Services::session();
 // Attention. CI_Enivronment must be set to production, otherwise debug information is written to the XML file
 // Output String with header -> Content-Type:text/xml
 if ($xml = $this->session->get('crawlXML')) {

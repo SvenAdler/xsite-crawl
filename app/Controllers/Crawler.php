@@ -3,15 +3,16 @@
 namespace App\Controllers;
 
 use App\Helpers\URL_Entry_Validator;
-use App\Helpers\Curl_And_XPath_Query;
+use App\Helpers\Curl_andXPATH;
 use App\Helpers\Relative_To_Absolute_Helper;
+use Config\Services;
 use PHPUnit\Util\Exception;
 
 class Crawler extends BaseController
 {
     public function __construct()
     {
-        $this->session = \Config\Services::session();
+        $this->session = Services::session();
         $this->session->start();
         $this->validator = new URL_Entry_Validator();
         $this->relToAb = new Relative_To_Absolute_Helper();
@@ -75,7 +76,7 @@ class Crawler extends BaseController
     {
         $baseUrl = $this->session->get('baseUrl');
         $excludeList = $this->session->has('excludeList') ? $this->session->get('excludeList') : array();
-        $xpathQuery = new Curl_And_XPath_Query($url);
+        $xpathQuery = new Curl_andXPATH($url);
         $links = $xpathQuery->cx_query("//a/@href");
         for ($i = 0; $i < $links->length; $i++) {
             $link = $links->item($i)->nodeValue; // just relative part of url
@@ -150,7 +151,7 @@ class Crawler extends BaseController
 
     public function download()
     {
-        return view('xml_output_page');
+        return view('xml_output');
     }
 }
 

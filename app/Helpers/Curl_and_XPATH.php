@@ -2,17 +2,17 @@
 
 namespace App\Helpers;
 
-class Curl_And_XPath_Query
+class Curl_andXPATH
 {
-    public \DOMXPath $xpathQuery;
-    public \DOMDocument $dom;
+    private \DOMDocument $dom;
+    private \DOMXPath $xpath;
 
     public function __construct($url)
     {
         $html = $this->curl($url);
         $this->dom = new \DOMDocument();
         @$this->dom->loadHTML($html);
-        $this->xpathQuery = new \DOMXPath($this->dom);
+        $this->xpath = new \DOMXPath($this->dom);
     }
 
     private function curl($url)
@@ -35,7 +35,7 @@ class Curl_And_XPath_Query
 
     public function cx_query($query): \DOMNodeList|bool
     {
-        $result = $this->xpathQuery->query($query);
+        $result = $this->xpath->query($query);
         return $result;
     }
 }

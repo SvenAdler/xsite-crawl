@@ -2,11 +2,9 @@
 
 namespace App\Helpers;
 
-use App\Controllers\Crawler;
-
 class Relative_To_Absolute_Helper
 {
-    function relative_to_absolute_url($host, $path)
+    public function relative_to_absolute_url($host, $path)
     {
         $host_parts = parse_url($host);
         $path_parts = parse_url($path);
