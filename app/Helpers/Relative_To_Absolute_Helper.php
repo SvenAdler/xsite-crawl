@@ -10,8 +10,7 @@ class Relative_To_Absolute_Helper
         $path_parts = parse_url($path);
         $absolute_path = '';
 
-        if (isset($path_parts['path']) && isset($host_parts['scheme']) &&
-            substr($path_parts['path'], 0, 2) === '//' && !isset($path_parts['scheme'])) {
+        if (isset($path_parts['path'], $host_parts['scheme']) && str_starts_with($path_parts['path'], '//') && !isset($path_parts['scheme'])) {
             $path = $host_parts['scheme'] . ':' . $path;
             $path_parts = parse_url($path);
         }

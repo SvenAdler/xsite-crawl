@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class Curl_andXPATH
+class Curl_and_XPATH
 {
     private \DOMDocument $dom;
     private \DOMXPath $xpath;
@@ -35,7 +35,6 @@ class Curl_andXPATH
 
     public function cx_query($query): \DOMNodeList|bool
     {
-        $result = $this->xpath->query($query);
-        return $result;
+        return $this->xpath->query($query);
     }
 }
