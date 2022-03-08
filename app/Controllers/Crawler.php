@@ -82,7 +82,7 @@ class Crawler extends BaseController
         $excludeList = $this->session->has('excludeList') ? $this->session->get('excludeList') : array();
         $xpathQuery = new Curl_and_XPATH($url);
         $links = $xpathQuery->cx_query("//a/@href");
-        for ($i = 0; $i < $links->length; $i++) {
+        for ($i = 0; $i < $links->length; ++$i) {
             $link = $links->item($i)->nodeValue; // just relative part of url
             // In case of #
             if (str_starts_with($link, '#')) {

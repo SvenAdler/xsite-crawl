@@ -1,18 +1,14 @@
 
 :root {
     --lightey: hsl(0, 0%, 100%);
-    --bg: rgba(35, 16, 16, 0.49);
+    /*--bg: rgba(35, 16, 16, 0.49);*/
+    --bg: rgba(48, 48, 48, 0.98);
     --c-border-url-form-style: #DDDDDD;
     --c-label-url-form-style: #B9B9B9;
 }
 
 body {
-    /*
-    background-position: 1% 2.1%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 300px 300px;
-    background-image: url(""); */
+    margin: 0;
     background-color: var(--bg) !important;
 }
 

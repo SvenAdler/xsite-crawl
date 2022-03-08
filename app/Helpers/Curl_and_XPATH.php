@@ -18,10 +18,13 @@ class Curl_and_XPATH
     private function curl($url)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_AUTOREFERER, false);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        $options = [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_AUTOREFERER => false,
+            CURLOPT_FOLLOWLOCATION => true
+        ];
+        curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
         if (!$result) {
             echo "curl error number: " . curl_errno($ch);
