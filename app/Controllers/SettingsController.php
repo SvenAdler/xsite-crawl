@@ -4,10 +4,14 @@ namespace App\Controllers;
 
 use App\Helpers\URL_Exclude_Lists;
 use CodeIgniter\HTTP\RedirectResponse;
+use CodeIgniter\Session\Session;
 use Config\Services;
 
 class SettingsController extends BaseController
 {
+    private URL_Exclude_Lists $ex;
+    private Session $session;
+
     public function __construct()
     {
         $this->session = Services::session();
